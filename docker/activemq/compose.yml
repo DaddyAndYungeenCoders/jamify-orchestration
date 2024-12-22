@@ -9,6 +9,6 @@ services:
     environment:
       ACTIVEMQ_DISALLOW_WEBCONSOLE: "false"
       ACTIVEMQ_USERNAME: "myuser"
-      ACTIVEMQ_PASSWORD: "mypwd"
+      ACTIVEMQ_PASSWORD: "Expect-Eggs-Why_Goat!"
       ACTIVEMQ_WEBADMIN_USERNAME: "myuserweb"
-      ACTIVEMQ_WEBADMIN_PASSWORD: "mypwd"
+      ACTIVEMQ_WEBADMIN_PASSWORD: "Expect-Eggs-Why_Goat!"

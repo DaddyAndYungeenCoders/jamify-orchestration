@@ -3,9 +3,13 @@ server:
 spring:
     activemq:
         broker-url: tcp://localhost:61616
-        password: mypwd
+        password: Expect-Eggs-Why_Goat!
         packages:
             trust-all: true
         user: myuser
+        queues:
+            playlist:
+                produce:  playlistDemandQueue
+                consume: playlistResultQueue
     application:
         name: orchestration
