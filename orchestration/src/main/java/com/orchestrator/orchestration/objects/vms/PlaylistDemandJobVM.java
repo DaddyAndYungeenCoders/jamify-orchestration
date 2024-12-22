@@ -5,14 +5,11 @@ import lombok.Setter;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 
-import java.util.UUID;
-
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class PlaylistDemandJobVM {
-    private UUID id;
+public class PlaylistDemandJobVM extends QueueMessage {
     private Long userId;
     private PlaylistDemandJobPayloadVM payload;
 }

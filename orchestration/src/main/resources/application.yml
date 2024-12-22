@@ -1,0 +1,11 @@
+server:
+    port: 8083
+spring:
+    activemq:
+        broker-url: tcp://localhost:61616
+        password: mypwd
+        packages:
+            trust-all: true
+        user: myuser
+    application:
+        name: orchestration

@@ -10,9 +10,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
-@Service
 @RequiredArgsConstructor
 @Slf4j
+@Service
 public class OrchestratorServiceImpl implements OrchestratorService {
     //private final JmsService jmsService;
     //private final PlaylistDemandMapper mapper;
