@@ -2,6 +2,7 @@ package com.orchestrator.orchestration.services.implementations;
 
 import com.orchestrator.orchestration.jms.interfaces.MessageProviders;
 import com.orchestrator.orchestration.objects.dtos.PlaylistDemandJobDTO;
+import com.orchestrator.orchestration.objects.mappers.PlaylistDemandMapper;
 import com.orchestrator.orchestration.objects.vms.PlaylistDemandJobVM;
 import com.orchestrator.orchestration.objects.vms.PlaylistEndJobPayloadVM;
 import com.orchestrator.orchestration.objects.vms.PlaylistEndJobVM;
@@ -28,9 +29,11 @@ public class OrchestratorServiceImpl implements OrchestratorService {
 
     private final MessageProviders<PlaylistDemandJobVM> messageProvider;
 
+    private final PlaylistDemandMapper playlistDemandMapper;
+
     @Override
     public UUID publishMessage(PlaylistDemandJobDTO demand) {
-        PlaylistDemandJobVM demandVM = new PlaylistDemandJobVM();
+        PlaylistDemandJobVM demandVM = playlistDemandMapper.toVM(demand);
 
         messageProvider.sendMessageToQueue(produceQueueName, demandVM);
 
