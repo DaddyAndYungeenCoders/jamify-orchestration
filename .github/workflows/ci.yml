@@ -34,7 +34,7 @@ jobs:
 
       - name: Build with Maven
         working-directory: ./orchestration
-        run: mvn clean install
+        run: pwd && ls -l && mvn clean install
 
       - name: Run tests
         working-directory: ./orchestration
