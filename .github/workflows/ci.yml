@@ -1,4 +1,4 @@
-name: Jamify UAA CI
+name: Jamify orchestration microservice CI
 
 on:
   push:
