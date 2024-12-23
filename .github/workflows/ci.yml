@@ -9,6 +9,10 @@ on:
     branches:
       - main
 
+defaults:
+  run:
+    working-directory: ./orchestration
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -33,9 +37,7 @@ jobs:
             ${{ runner.os }}-maven-
 
       - name: Build with Maven
-        working-directory: ./orchestration
-        run: pwd && ls -l && mvn clean install
+        run: mvn clean install
 
       - name: Run tests
-        working-directory: ./orchestration
         run: mvn package
