@@ -11,5 +11,8 @@ spring:
             playlist:
                 produce:  jamify.ai.playlist-gen
                 consume: jamify.orchestrator.playlist-done
+            notification:
+                produce:  jamify.notify.notification
+
     application:
         name: orchestration
