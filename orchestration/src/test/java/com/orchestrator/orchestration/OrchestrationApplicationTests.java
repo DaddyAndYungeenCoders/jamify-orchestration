@@ -13,6 +13,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.util.ReflectionTestUtils;
 
 import java.util.HashSet;
@@ -20,6 +21,7 @@ import java.util.Set;
 import java.util.UUID;
 
 @SpringBootTest
+@ActiveProfiles("test")
 class OrchestrationApplicationTests {
 	@Mock
 	private MessageProviders<PlaylistDemandJobVM> messageProvider;
