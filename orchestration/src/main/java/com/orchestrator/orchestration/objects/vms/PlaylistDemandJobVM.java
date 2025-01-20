@@ -1,5 +1,6 @@
 package com.orchestrator.orchestration.objects.vms;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.NoArgsConstructor;
@@ -19,5 +20,6 @@ public class PlaylistDemandJobVM implements Serializable {
 
     private UUID id;
     private Long userId;
+    @JsonProperty("data")
     private PlaylistDemandJobPayloadVM payload;
 }

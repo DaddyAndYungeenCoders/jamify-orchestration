@@ -51,8 +51,8 @@ class OrchestrationApplicationTests {
 	private PlaylistDemandJobDTO buildPlaylistDemandJobDTO() {
 		Long userId = 1L;
 		Tag tag = new Tag(1L, "Triste");
-		Set<Tag> tags = new HashSet<>();
-		tags.add(tag);
+		Set<String> tags = new HashSet<>();
+		tags.add(tag.label());
 		PlaylistDemandJobPayloadVM payload = new PlaylistDemandJobPayloadVM();
 		payload.setTags(tags);
 		payload.setPreferedNumberOfTitle(20);
