@@ -2,11 +2,10 @@ server:
     port: 8083
 spring:
     activemq:
-        broker-url: tcp://localhost:61616
-        password: Expect-Eggs-Why_Goat!
+        broker-url: tcp://activemq:61616
+        password: admin
         packages:
             trust-all: true
-        user: myuser
         queues:
             playlist:
                 produce:  jamify.ai.playlist-gen
@@ -16,3 +15,9 @@ spring:
 
     application:
         name: orchestration
+
+config:
+    engine:
+        url:
+            base: ${JAMIFY_ENGINE_BASE_URL}
+        jamify-engine-api-key: ${JAMIFY_ENGINE_API_KEY}
