@@ -9,10 +9,6 @@ on:
     branches:
       - main
 
-defaults:
-  run:
-    working-directory: ./orchestration
-
 jobs:
   build:
     name: "Build and Test"
@@ -37,7 +33,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: maven-artifact
-          path: orchestration/target/*.jar
+          path: target/*.jar
 
   docker:
     name: "Docker Build and Push"
