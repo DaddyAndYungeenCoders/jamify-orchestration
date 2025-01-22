@@ -27,7 +27,7 @@ jobs:
       - name: Build with Maven
         env:
           SPRING_PROFILES_ACTIVE: test
-        run: mvn -B package -Dspring.profiles.active=test
+        run: mvn -B package --file pom.xml -Dspring.profiles.active=test
 
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v4
