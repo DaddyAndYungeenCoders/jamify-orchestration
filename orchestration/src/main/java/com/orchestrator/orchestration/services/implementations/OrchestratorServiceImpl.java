@@ -3,6 +3,7 @@ package com.orchestrator.orchestration.services.implementations;
 import com.orchestrator.orchestration.jms.interfaces.MessageProviders;
 import com.orchestrator.orchestration.objects.dtos.PlaylistDemandJobDTO;
 import com.orchestrator.orchestration.objects.mappers.PlaylistDemandMapper;
+import com.orchestrator.orchestration.objects.vms.NotificationVM;
 import com.orchestrator.orchestration.objects.vms.PlaylistDemandJobVM;
 import com.orchestrator.orchestration.objects.vms.PlaylistEndJobPayloadVM;
 import com.orchestrator.orchestration.objects.vms.PlaylistEndJobVM;
@@ -27,7 +28,12 @@ public class OrchestratorServiceImpl implements OrchestratorService {
     @Value("${spring.activemq.queues.playlist.produce}")
     private String produceQueueName;
 
+    @Value("${spring.activemq.queues.notification.produce}")
+    private String notificationQueueName;
+
     private final MessageProviders<PlaylistDemandJobVM> messageProvider;
+
+    private final MessageProviders<NotificationVM> notificationProvider;
 
     private final PlaylistDemandMapper playlistDemandMapper;
 
@@ -40,6 +46,11 @@ public class OrchestratorServiceImpl implements OrchestratorService {
         return demandVM.getId();
     }
 
+    @Override
+    public void publishNotification(NotificationVM notif) {
+        notificationProvider.sendMessageToQueue(notificationQueueName, notif);
+    }
+
     /**
      * @deprecated
      * @param endJobVM
@@ -47,7 +58,6 @@ public class OrchestratorServiceImpl implements OrchestratorService {
      * TODO remove
      */
     @Deprecated
-    @Override
     public UUID publishMessage(PlaylistEndJobVM endJobVM) {
         messageProvider.sendMessageToQueue(consumeQueueName, endJobVM);
 
