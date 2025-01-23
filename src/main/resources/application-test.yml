@@ -9,8 +9,8 @@ spring:
     user: myuser
     queues:
       playlist:
-        produce:  com.jamify.ai.playlist-gen
-        consume: com.jamify.orchestrator.playlist-done
+        produce:  jamify.ai.playlist-gen
+        consume: jamify.orchestrator.playlist-done
   application:
     name: orchestration
 
