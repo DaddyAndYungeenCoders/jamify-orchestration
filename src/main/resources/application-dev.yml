@@ -2,6 +2,8 @@
 spring:
   activemq:
     broker-url: tcp://localhost:61616
+    user: myusr
+    password: mypwd
 config:
   engine:
     url:
