@@ -6,5 +6,5 @@ import org.springframework.jms.annotation.JmsListener;
 public interface MessageConsumers<T> {
 
     @JmsListener(destination = "jamify.orchestrator.playlist-done")
-    void onMessageReceived(String messagePayload) throws JsonProcessingException;
+    void onMessageReceived(T messagePayload) throws JsonProcessingException;
 }
