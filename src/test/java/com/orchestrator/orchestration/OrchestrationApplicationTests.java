@@ -29,7 +29,7 @@ class OrchestrationApplicationTests {
 	@Autowired
 	private OrchestratorService orchestratorService;
 
-	private final static String PRODUCE_QUEUE_NAME = "com.jamify.ai.playlist-gen";
+	private final static String PRODUCE_QUEUE_NAME = "jamify.ai.playlist-gen";
 
 	@BeforeEach
 	void setUp() {
