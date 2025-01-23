@@ -15,7 +15,7 @@ public class MessageConsumer implements MessageConsumers<PlaylistEndJobVM> {
     private final OrchestratorService orchestratorService;
 
     @Override
-    @JmsListener(destination = "jamify.orchestrator.playlist-done")
+    @JmsListener(destination = "com.jamify.orchestrator.playlist-done")
     public void onMessageReceived(PlaylistEndJobVM message) {
         log.info("Received playlist end job with id {}", message.getId());
         orchestratorService.onReceiveMessage(message);
