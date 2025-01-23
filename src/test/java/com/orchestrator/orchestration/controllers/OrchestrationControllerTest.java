@@ -47,7 +47,7 @@ public class OrchestrationControllerTest {
     @Test
     public void shouldAskToGenerateAPlaylist() throws Exception {
         // GIVEN
-        Long userId = 1L;
+        String userId = "user-test";
         Tag tag = new Tag(1L, "Triste");
         Set<String> tags = new HashSet<>();
         tags.add(tag.label());

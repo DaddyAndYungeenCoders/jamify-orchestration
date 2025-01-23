@@ -19,7 +19,7 @@ public class PlaylistDemandJobVM implements Serializable {
     private static final long serialVersionUID = 121354532164L;
 
     private UUID id;
-    private Long userId;
+    private String userId;
     @JsonProperty("data")
     private PlaylistDemandJobPayloadVM payload;
 }

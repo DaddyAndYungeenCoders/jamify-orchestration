@@ -6,6 +6,6 @@ import com.orchestrator.orchestration.objects.vms.PlaylistDemandJobPayloadVM;
 import lombok.NonNull;
 
 public record PlaylistDemandJobDTO(
-        @NonNull Long userId,
+        @NonNull String userId,
         @JsonProperty("data")
         @NonNull PlaylistDemandJobPayloadVM payloadVM) { }
