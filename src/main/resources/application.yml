@@ -8,8 +8,8 @@ spring:
             trust-all: true
         queues:
             playlist:
-                produce:  jamify.ai.playlist-gen
-                consume: jamify.orchestrator.playlist-done
+                produce:  com.jamify.ai.playlist-gen
+                consume: com.jamify.orchestrator.playlist-done
             notification:
                 produce:  jamify.notify.notification
 
